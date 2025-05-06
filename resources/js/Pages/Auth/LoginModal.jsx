@@ -1,25 +1,26 @@
 import React from "react";
-import Checkbox from '@/Components/Checkbox';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Link, useForm } from '@inertiajs/react'
+import Checkbox from "@/Components/Checkbox";
+import InputError from "@/Components/InputError";
+import InputLabel from "@/Components/InputLabel";
+import PrimaryButton from "@/Components/PrimaryButton";
+import TextInput from "@/Components/TextInput";
+import { Link, useForm } from "@inertiajs/react";
+import NeutralButton from "@/Components/NeutralButton";
 
 function LoginModal({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-            email: '',
-            password: '',
-            remember: false,
+        email: "",
+        password: "",
+        remember: false,
+    });
+
+    const submit = (e) => {
+        e.preventDefault();
+
+        post(route("login"), {
+            onFinish: () => reset("password"),
         });
-    
-        const submit = (e) => {
-            e.preventDefault();
-    
-            post(route('login'), {
-                onFinish: () => reset('password'),
-            });
-        };
+    };
     return (
         <div>
             <dialog id="login_modal" className="modal">
@@ -98,7 +99,14 @@ function LoginModal({ status, canResetPassword }) {
                                     Forgot your password?
                                 </Link>
                             )}
-
+                            <div className="modal-action mt-0">
+                                <form method="dialog">
+                                    <NeutralButton type="submit">
+                                        Cancel
+                                    </NeutralButton>
+                                </form>
+                            </div>
+                            
                             <PrimaryButton
                                 className="ms-4"
                                 disabled={processing}
