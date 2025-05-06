@@ -1,13 +1,6 @@
 import { Link, usePage } from "@inertiajs/react";
 import { useState, useRef, useEffect } from "react";
-import {
-    Card,
-    Typography,
-    List,
-    ListItem,
-    ListItemPrefix,
-    IconButton,
-} from "@material-tailwind/react";
+import { Card, Typography, List, ListItem, ListItemPrefix, IconButton, } from "@material-tailwind/react";
 import {
     PresentationChartBarIcon,
     ShoppingBagIcon,
@@ -152,15 +145,15 @@ export default function AuthenticatedLayout({ header, children }) {
 
                 <div className="flex flex-col w-screen md:w-[80%] ml-auto">
                     {header && (
-                        <header className="bg-white md:w-[80%] z-60 shadow shrink-0 ">
-                            <div className="mx-auto bg-white w-screen md:w-[80%] px-4 py-6 sm:px-6 lg:px-8 fixed shadow-sm">
+                        <header className="bg-white md:w-[80%] z-40 shadow shrink-0 ">
+                            <div className="mx-auto bg-white w-screen md:w-[80%] px-4 py-6 sm:px-6 lg:px-8 fixed shadow-sm -ml-2">
                                 {header}
                             </div>
                         </header>
                     )}
 
                     <main>
-                        <div className="flex mt-[72px] mx-2 z-50">
+                        <div className="flex mt-[72px] mx-2 z-20">
                             {children}
                         </div>
                     </main>

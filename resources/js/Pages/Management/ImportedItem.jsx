@@ -7,14 +7,14 @@ import CreateItem from "./CreateItem";
 import DeleteItem from "./DeleteItem";
 import { PlusIcon } from "@heroicons/react/24/solid";
 
-function ImportedItem({ user, items }) {
+export default function ImportedItem ({ user, items }) {
     const [loading, setLoading] = useState(true);
     const [query, setQuery] = useState("");
     const [filteredItems, setFilteredItems] = useState([]);
 
     useEffect(() => {
         setLoading(false);
-        setFilteredItems(items); // Menampilkan semua item saat awal
+        setFilteredItems(items);
     }, [items]);
 
     const handleSubmit = (e) => {
@@ -209,4 +209,4 @@ function ImportedItem({ user, items }) {
     );
 }
 
-export default ImportedItem;
+

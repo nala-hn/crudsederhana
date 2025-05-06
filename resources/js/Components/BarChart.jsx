@@ -22,7 +22,7 @@ export default function BarChart() {
     height: 240,
     series: [
       {
-        name: "Jumlah Barang",
+        name: "Quantity",
         data: seriesData,
       },
     ],
@@ -90,7 +90,7 @@ export default function BarChart() {
         tooltip: {
           theme: "dark",
         },
-        title: { text: 'Jumlah' },
+        title: { text: 'Quantity' },
       },
   };
 
